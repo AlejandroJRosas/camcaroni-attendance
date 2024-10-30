@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { PORT } from "./constants";
+import { PORT } from "./shared/constants";
 import { router } from "./router";
 import morgan from "morgan";
 

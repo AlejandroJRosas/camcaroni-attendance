@@ -7,5 +7,6 @@ export const validateEnv = () => {
 		GOOGLE_API_KEY: notEmptyStr(),
 		SPREADSHEET_ID: notEmptyStr(),
 		SHEET_ID: notEmptyStr(),
+		SHEET_NAME: notEmptyStr(),
 	});
 };
