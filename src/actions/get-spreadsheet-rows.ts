@@ -1,6 +1,6 @@
 import { Auth, sheets_v4 } from "googleapis";
 import { SHEET_NAME, SPREADSHEET_ID } from "../shared/constants";
-import { Participation, SheetRow } from "../shared/types/row.type";
+import type { Participation, SheetRow } from "../shared/types/row.type";
 
 export async function getSpreadsheetRows(): Promise<SheetRow[]> {
 	const auth = new Auth.GoogleAuth({
@@ -24,7 +24,8 @@ export async function getSpreadsheetRows(): Promise<SheetRow[]> {
 		return [];
 	}
 
-	const rows: SheetRow[] = getRows.data.values.slice(1).map((row) => ({
+	const rows: SheetRow[] = getRows.data.values.slice(1).map((row, index) => ({
+		rowNumber: index + 1,
 		registeredAt: row[0],
 		name: row[1],
 		telephoneNumber: row[2],

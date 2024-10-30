@@ -1,4 +1,5 @@
 export type SheetRow = {
+	rowNumber: number;
 	registeredAt: string;
 	name: string;
 	telephoneNumber: string;
