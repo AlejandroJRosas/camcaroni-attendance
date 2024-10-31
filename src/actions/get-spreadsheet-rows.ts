@@ -55,22 +55,24 @@ export async function getSpreadsheetRows(
 		return [];
 	}
 
-	const rows: SheetRow[] = getRows.data.values.slice(1).map((row, index) => ({
-		rowNumber: index + 2,
-		registeredAt: row[0],
-		name: row[1],
-		telephoneNumber: row[2],
-		job: row[3],
-		area: row[4],
-		interests: row[5],
-		email: row[7],
-		raffleCode: row[8],
-		participation: row.slice(9) as [
-			Participation,
-			Participation,
-			Participation
-		],
-	}));
+	const rows: SheetRow[] = getRows.data.values
+		.slice(1)
+		.map((row, index: number) => ({
+			rowNumber: index + 2,
+			registeredAt: row[0],
+			name: row[1],
+			telephoneNumber: row[2],
+			job: row[3],
+			area: row[4],
+			interests: row[5],
+			email: row[7],
+			raffleCode: row[8],
+			participation: row.slice(9, 12) as [
+				Participation,
+				Participation,
+				Participation
+			],
+		}));
 
 	return rows;
 }
