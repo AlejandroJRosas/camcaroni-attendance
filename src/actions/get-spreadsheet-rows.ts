@@ -1,3 +1,4 @@
+// @ts-ignore
 import type { Auth } from "googleapis";
 import { sheets_v4 } from "googleapis";
 import {

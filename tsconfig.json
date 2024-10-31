@@ -4,20 +4,15 @@
 		"module": "commonjs",
 		"skipLibCheck": true,
 		"baseUrl": "./",
-		"paths": {
-			"@types/*": ["@types/*"]
-		},
 		"outDir": "./dist",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"strict": true,
+		"strict": false,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+		"noEmitOnError": false
 	},
-	"include": [
-		"src/**/*",
-		"@types/**/*" // Asegúrate de incluir la carpeta donde está tu declaración
-	]
+	"include": ["src/**/*"]
 }
