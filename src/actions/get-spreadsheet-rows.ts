@@ -1,5 +1,6 @@
 // @ts-ignore
 import type { Auth } from "googleapis";
+// @ts-ignore
 import { sheets_v4 } from "googleapis";
 import {
 	FIRST_DAY_EVENT,
