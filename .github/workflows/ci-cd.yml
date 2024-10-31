@@ -22,6 +22,6 @@ jobs:
             git pull
             pnpm install
             pnpm build
-            cp /var/apps/camcaroni-attendance/views /var/apps/camcaroni-attendance/dist/view
+            cp -r /var/apps/camcaroni-attendance/src/views /var/apps/camcaroni-attendance/dist/views
             pm2 restart camcaroni-attendance
             pm2 save
