@@ -1,0 +1,138 @@
+<!-- views/attendance.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Asistencia Evento CamCaroni</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: "Tilt Neon", sans-serif;
+				background-color: #1d2b4f;
+				color: #fdb20f;
+				width: 100dvw;
+				height: 100dvh;
+				overflow: hidden;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 35rem;
+				height: 35rem;
+				margin: 0 auto;
+				background-color: #fef7fd;
+				border-radius: 100%;
+				border: 1px solid #ccc;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				position: relative;
+			}
+			.ticket-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.raffle-code-text,
+			.raffle-code-text-inverted {
+				z-index: 1;
+				font-size: 2.8rem;
+				margin: 0;
+				color: #1d2b4f;
+				position: absolute;
+				transform: translate(0%, -285%);
+			}
+			.raffle-code-text-inverted {
+				rotate: -180deg;
+			}
+			.ticket-text {
+				z-index: 1;
+				color: #1d2b4f;
+				font-size: 1.5rem;
+				position: absolute;
+				transform: translate(0%, 285%);
+			}
+			.name-text {
+				width: 12rem;
+				bottom: 26rem;
+			}
+			.info {
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.small-info {
+				font-size: 0.8rem;
+			}
+			.ticket-icon {
+				position: absolute;
+				width: auto; /* Make SVG responsive */
+				height: 80%; /* Maintain aspect ratio */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- TICKET -->
+			<div class="ticket-container">
+				<div class="data-container">
+					<h1 class="raffle-code-text"><%= raffleCode %></h1>
+					<h1 class="raffle-code-text-inverted"><%= raffleCode %></h1>
+					<h2 class="ticket-text name-text"><%= name %></h2>
+				</div>
+				<svg
+					class="ticket-icon"
+					width="51"
+					height="94"
+					viewBox="0 0 51 94"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M1.50085 1C1.50085 1 3.29172 5 5.50085 5C7.70999 5 9.50085 1 9.50085 1H15.0009C15.0009 1 16.7917 5 19.0009 5C21.21 5 23.0009 1 23.0009 1H28.5009C28.5009 1 30.2917 5 32.5009 5C34.71 5 36.5009 1 36.5009 1H42.0009C42.0009 1 43.7917 5 46.0009 5C48.21 5 50.0009 1 50.0009 1V17.5C50.0009 17.5 49 18.1716 49 19C49 19.8284 50.0009 20.5 50.0009 20.5V74.5C50.0009 74.5 49 75.296 49 76C49 76.704 50.0009 77.5 50.0009 77.5L50 93C50 93 48.2091 89 46 89C43.7909 89 42 93 42 93H36.5C36.5 93 34.7091 89 32.5 89C30.2909 89 28.5 93 28.5 93H23C23 93 21.2091 89 19 89C16.7909 89 15 93 15 93H9.5C9.5 93 7.70914 89 5.5 89C3.29086 89 1.5 93 1.5 93V77.5C1.5 77.5 2.66279 76.8114 2.5 75.9991C2.39157 75.4581 1.50085 74.5 1.50085 74.5V20.5C1.50085 20.5 2.50085 19.5523 2.50085 19C2.50085 18.4477 1.50085 17.5 1.50085 17.5V1Z"
+						fill="#FDB20F"
+					/>
+					<path
+						d="M3.5 19H10.5M13 19H20M22.5 19H29.5M32 19H39M40.9991 19H47.9991M3.5 76H10.5M13 76H20M22.5 76H29.5M32 76H39M40.9991 76H47.9991M1.50085 1C1.50085 1 3.29172 5 5.50085 5C7.70999 5 9.50085 1 9.50085 1H15.0009C15.0009 1 16.7917 5 19.0009 5C21.21 5 23.0009 1 23.0009 1H28.5009C28.5009 1 30.2917 5 32.5009 5C34.71 5 36.5009 1 36.5009 1H42.0009C42.0009 1 43.7917 5 46.0009 5C48.21 5 50.0009 1 50.0009 1V17.5C50.0009 17.5 49 18.1716 49 19C49 19.8284 50.0009 20.5 50.0009 20.5V74.5C50.0009 74.5 49 75.296 49 76C49 76.704 50.0009 77.5 50.0009 77.5L50 93C50 93 48.2091 89 46 89C43.7909 89 42 93 42 93H36.5C36.5 93 34.7091 89 32.5 89C30.2909 89 28.5 93 28.5 93H23C23 93 21.2091 89 19 89C16.7909 89 15 93 15 93H9.5C9.5 93 7.70914 89 5.5 89C3.29086 89 1.5 93 1.5 93V77.5C1.5 77.5 2.66279 76.8114 2.5 75.9991C2.39157 75.4581 1.50085 74.5 1.50085 74.5V20.5C1.50085 20.5 2.50085 19.5523 2.50085 19C2.50085 18.4477 1.50085 17.5 1.50085 17.5V1Z"
+						stroke="#1B2A54"
+						stroke-width="2"
+					/>
+				</svg>
+			</div>
+
+			<!-- CHECK -->
+			<svg
+				class="check-icon"
+				width="20"
+				height="17"
+				viewBox="0 0 20 17"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M1.99993 9L6.49993 13.5L18.9999 1M3.49993 5C0.806663 7.55152 0.806663 11.9485 3.49993 14.5C6.05145 16.9172 9.94841 16.9172 12.4999 14.5C15.1932 11.9485 15.1932 7.55152 12.4999 5C9.94841 2.58277 6.05145 2.58277 3.49993 5Z"
+					stroke="#1B2A54"
+				/>
+			</svg>
+
+			<div class="info"></div>
+			<!-- <div class="info"><%= name %></div>
+			<div class="small-info"><%= email %></div>
+			<div class="small-info"><%= telephoneNumber %></div>
+			<div class="info">
+				<strong>Día 1:</strong> <%= participation[0]?"😀":":(" %>
+			</div>
+			<div class="info"><strong>Día 2:</strong> <%= participation[1] %></div>
+			<div class="info"><strong>Día 3:</strong> <%= participation[2] %></div> -->
+		</div>
+	</body>
+</html>

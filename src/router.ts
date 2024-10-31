@@ -1,5 +1,6 @@
-import { Request, Response, Router } from "express";
-import { updateAttendance } from "./actions/update-attendance";
+import { Router } from "express";
+import type { Request, Response } from "express";
+import { execute } from "./actions/get-spreadsheet-rows";
 
 export const router = Router();
 
@@ -19,12 +20,12 @@ async function action(req: Request, res: Response) {
 		return;
 	}
 
-	const response = await updateAttendance(String(id));
+	const response = await execute(String(id));
 
 	if (!response) {
 		res.status(404).json({ error: "Not found" });
 		return;
 	}
 
-	res.status(200).json(response);
+	res.status(200).render("attendance", response);
 }
