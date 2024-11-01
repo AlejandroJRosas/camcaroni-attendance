@@ -20,7 +20,7 @@ export async function execute(id: string) {
 	const targetRow = await findByRowId(id, rows);
 
 	if (!targetRow) {
-		throw new Error("Row not found");
+		return null;
 	}
 
 	const day = getParticipationDay();
@@ -31,7 +31,10 @@ export async function execute(id: string) {
 
 	await updateAttendance(targetRow.rowNumber.toString(), googleSheets, day);
 
-	return targetRow;
+	const updatedRows = await getSpreadsheetRows(googleSheets);
+	const updatedTargetRow = await findByRowId(id, updatedRows);
+
+	return updatedTargetRow;
 }
 
 async function connectToGoogleSheets() {
