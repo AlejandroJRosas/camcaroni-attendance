@@ -33,7 +33,6 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				/* max-width: 35rem; */
 				height: auto;
 				padding: 2rem;
 				border-radius: 10px;
@@ -42,14 +41,14 @@
 			}
 
 			.raffle-code-text {
-				font-size: 2.5rem;
+				font-size: 2rem;
 				margin: 0;
 				text-align: center;
 			}
 
 			.ticket-text {
-				font-size: 1.5rem;
-				margin: 1rem 0;
+				font-size: 1.25rem;
+				margin: 0.5rem 0;
 				text-align: center;
 			}
 
@@ -79,7 +78,7 @@
 			}
 
 			.day-number {
-				font-size: 1.2rem;
+				font-size: 1rem;
 			}
 
 			.attendance-icon {
@@ -104,13 +103,13 @@
 				margin-bottom: 0.5rem;
 
 				.circle {
-					width: 5rem;
-					height: 5rem;
+					width: 4rem;
+					height: 4rem;
 					border-radius: 100%;
-					border-top: transparent 1.25rem solid;
-					border-bottom: white 1.25rem solid;
-					border-left: white 1.25rem solid;
-					border-right: white 1.25rem solid;
+					border-top: transparent 1rem solid;
+					border-bottom: white 1rem solid;
+					border-left: white 1rem solid;
+					border-right: white 1rem solid;
 					background-color: transparent;
 					margin-right: 0.5rem;
 					position: relative;
@@ -118,8 +117,8 @@
 
 				.circle::before {
 					content: "";
-					width: 3rem;
-					height: 3rem;
+					width: 2.5rem;
+					height: 2.5rem;
 					border-radius: 100%;
 					background-color: white;
 					position: absolute;
@@ -129,7 +128,8 @@
 				}
 
 				.title {
-					width: 17.5rem;
+					width: 13rem;
+					font-size: 1.5rem;
 					line-height: 2rem;
 				}
 			}
@@ -158,7 +158,7 @@
 		<div class="container">
 			<h1
 				class="raffle-code-text"
-				style="display: flex; align-items: center; gap: 1rem"
+				style="display: flex; align-items: center; gap: 0.5rem"
 			>
 				<i class="fas fa-ticket" style="rotate: 45deg; color: #ffb330"></i><%=
 				raffleCode %>
