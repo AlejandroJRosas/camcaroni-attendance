@@ -7,7 +7,7 @@ export const { PORT, SPREADSHEET_ID, GOOGLE_API_KEY, SHEET_NAME } =
 	validateEnv();
 
 export const FIRST_DAY_EVENT = {
-	date: 4,
+	date: 5,
 	row: "I",
 };
 

@@ -65,14 +65,14 @@ export async function getSpreadsheetRows(
 		.map((row, index: number) => ({
 			rowNumber: index + 2,
 			registeredAt: row[0],
-			name: row[1],
-			telephoneNumber: row[2],
-			job: row[3],
-			area: row[4],
-			interests: row[5],
-			email: row[7],
-			raffleCode: row[8],
-			participation: row.slice(9, 12) as [
+			email: row[1],
+			name: row[2],
+			telephoneNumber: row[3],
+			job: row[4],
+			area: row[5],
+			interests: row[6],
+			raffleCode: row[7],
+			participation: row.slice(8, 11) as [
 				Participation,
 				Participation,
 				Participation

@@ -25,7 +25,6 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				gap: 3rem;
 				flex-direction: column;
 			}
 
@@ -98,6 +97,43 @@
 				background-color: #f00;
 			}
 
+			.brand {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0.5rem;
+
+				.circle {
+					width: 5rem;
+					height: 5rem;
+					border-radius: 100%;
+					border-top: transparent 1.25rem solid;
+					border-bottom: white 1.25rem solid;
+					border-left: white 1.25rem solid;
+					border-right: white 1.25rem solid;
+					background-color: transparent;
+					margin-right: 0.5rem;
+					position: relative;
+				}
+
+				.circle::before {
+					content: "";
+					width: 3rem;
+					height: 3rem;
+					border-radius: 100%;
+					background-color: white;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				.title {
+					width: 17.5rem;
+					line-height: 2rem;
+				}
+			}
+
 			/* Media Queries */
 			@media (max-width: 600px) {
 				.raffle-code-text {
@@ -115,12 +151,10 @@
 		</style>
 	</head>
 	<body>
-		<img
-			class="brand-img"
-			src="https://i.ibb.co/0tm2rxd/cam.png"
-			alt="brand-img"
-			style="max-width: 100%; height: auto"
-		/>
+		<div class="brand">
+			<div class="circle"></div>
+			<h1 class="title">Expo Empresarial Camcaroní 2024</h1>
+		</div>
 		<div class="container">
 			<h1
 				class="raffle-code-text"

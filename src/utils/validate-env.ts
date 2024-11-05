@@ -6,7 +6,6 @@ export const validateEnv = () => {
 		PORT: port(),
 		GOOGLE_API_KEY: notEmptyStr(),
 		SPREADSHEET_ID: notEmptyStr(),
-		SHEET_ID: notEmptyStr(),
 		SHEET_NAME: notEmptyStr(),
 	});
 };
