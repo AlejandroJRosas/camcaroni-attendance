@@ -1,6 +1,7 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import { execute } from "./actions/get-spreadsheet-rows";
+import path from "node:path";
 
 export const router = Router();
 
@@ -11,6 +12,8 @@ router.get("/", (_req, res) => {
 
 // Attendance endpoint
 router.get("/asistencia", action);
+
+router.get("/images/camcaroni-registro", image);
 
 async function action(req: Request, res: Response) {
 	const { id } = req.query;
@@ -28,4 +31,13 @@ async function action(req: Request, res: Response) {
 	}
 
 	res.status(200).render("attendance", response);
+}
+
+function image(_req: Request, res: Response) {
+	const imagePath = path.join(
+		process.cwd(),
+		"public/images/camcaroni-registro.png"
+	);
+
+	res.sendFile(imagePath);
 }
