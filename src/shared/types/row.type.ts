@@ -11,4 +11,4 @@ export type SheetRow = {
 	participation: [Participation, Participation, Participation];
 };
 
-export type Participation = boolean | undefined;
+export type Participation = boolean | string | undefined;

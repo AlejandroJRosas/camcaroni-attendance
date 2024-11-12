@@ -37,7 +37,7 @@ export async function execute(id: string) {
 	return updatedTargetRow;
 }
 
-async function connectToGoogleSheets() {
+export async function connectToGoogleSheets() {
 	const client = await auth.getClient();
 
 	const googleSheets = new sheets_v4.Sheets({
