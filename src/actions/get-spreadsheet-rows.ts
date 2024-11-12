@@ -4,6 +4,7 @@ import type { Auth } from "googleapis";
 import { sheets_v4 } from "googleapis";
 import {
 	FIRST_DAY_EVENT,
+	PERMISSION_KEY,
 	SECOND_DAY_EVENT,
 	SHEET_NAME,
 	SPREADSHEET_ID,
@@ -12,7 +13,7 @@ import {
 import type { Participation, SheetRow } from "../shared/types/row.type";
 import { auth } from "../shared/connection";
 
-export async function execute(id: string) {
+export async function execute(id: string, key: string) {
 	const googleSheets = await connectToGoogleSheets();
 
 	const rows = await getSpreadsheetRows(googleSheets);
@@ -29,12 +30,16 @@ export async function execute(id: string) {
 		return targetRow;
 	}
 
-	await updateAttendance(targetRow.rowNumber.toString(), googleSheets, day);
+	if (key === PERMISSION_KEY) {
+		await updateAttendance(targetRow.rowNumber.toString(), googleSheets, day);
 
-	const updatedRows = await getSpreadsheetRows(googleSheets);
-	const updatedTargetRow = await findByRowId(id, updatedRows);
+		const updatedRows = await getSpreadsheetRows(googleSheets);
+		const updatedTargetRow = await findByRowId(id, updatedRows);
 
-	return updatedTargetRow;
+		return updatedTargetRow;
+	}
+
+	return targetRow;
 }
 
 export async function connectToGoogleSheets() {

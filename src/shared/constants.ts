@@ -3,8 +3,13 @@ import { validateEnv } from "../utils/validate-env";
 
 dotenv.config();
 
-export const { PORT, SPREADSHEET_ID, GOOGLE_API_KEY, SHEET_NAME } =
-	validateEnv();
+export const {
+	PORT,
+	SPREADSHEET_ID,
+	GOOGLE_API_KEY,
+	SHEET_NAME,
+	PERMISSION_KEY,
+} = validateEnv();
 
 export const FIRST_DAY_EVENT = {
 	date: 14,

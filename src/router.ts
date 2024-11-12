@@ -20,14 +20,14 @@ router.get("/sorteo", raffle);
 router.get("/images/camcaroni-registro", image);
 
 async function action(req: Request, res: Response) {
-	const { id } = req.query;
+	const { id, key } = req.query;
 
 	if (!id) {
 		res.status(400).json({ error: "Missing id" });
 		return;
 	}
 
-	const response = await execute(String(id));
+	const response = await execute(String(id), String(key));
 
 	if (!response) {
 		res.status(404).json({ error: "Not found" });
