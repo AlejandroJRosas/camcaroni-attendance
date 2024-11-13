@@ -12,7 +12,7 @@ export const {
 } = validateEnv();
 
 export const FIRST_DAY_EVENT = {
-	date: 14,
+	date: 13,
 	row: "I",
 };
 
